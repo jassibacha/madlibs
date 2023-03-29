@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}MadLibs - Home{% endblock %} {% block
+content %}
+<h1>Mad Libs</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+    necessitatibus eaque hic quisquam in quidem rem saepe voluptatibus nulla. Ab
+    harum at cupiditate perferendis excepturi quo consectetur laboriosam, nisi
+    saepe!
+</p>
+<form action="/story">
+    {% for prompt in prompts %}
+    <div class="form-control">
+        <label for="{{prompt}}">{{prompt}}:</label>
+        <input type="text" placeholder="" name="{{prompt}}" id="{{prompt}}" />
+    </div>
+    {% endfor %}
+
+    <button>Submit</button>
+</form>
+{% endblock %}
